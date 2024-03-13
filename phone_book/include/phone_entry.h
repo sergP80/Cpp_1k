@@ -5,7 +5,7 @@
 #include "phone_number.h"
 #include "address.h"
 
-namespace book_phone
+namespace phone_book
 {
 
 	class PhoneEntry
@@ -17,9 +17,7 @@ namespace book_phone
 
 		Address address_;
 	public:
-		PhoneEntry()
-			: phone_number_("")
-		{}
+		PhoneEntry() = default;
 
 		PhoneEntry(const std::string& number, const std::string& name);
 
@@ -57,5 +55,6 @@ namespace book_phone
 			address_ = address;
 		}
 
+		bool is_match(const std::string& term) const;
 	};
 }

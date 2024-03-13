@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-namespace book_phone {
+namespace phone_book {
 
 	class Address {
 	private:
@@ -66,10 +66,7 @@ namespace book_phone {
 		{
 			zip_ = zip;
 		}
-		
-		friend std::ostream& operator<<(std::ostream&, const Address&);
 
+		bool is_match(const std::string& term) const;
 	};
-
-	std::ostream& operator<<(std::ostream&, const Address&);
 }

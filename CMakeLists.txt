@@ -23,5 +23,5 @@ endif()
 # Include sub-projects.
 add_subdirectory ("libs")
 add_subdirectory ("integral_app")
-add_subdirectory ("book_phone")
+add_subdirectory ("phone_book")
 add_subdirectory ("decanat")

@@ -1,6 +1,6 @@
 ﻿#include "phone_entry.h"
 
-namespace book_phone
+namespace phone_book
 {
 	PhoneEntry::PhoneEntry(const std::string& number, const std::string& name)
 		: phone_number_(number)
@@ -19,4 +19,11 @@ namespace book_phone
 		, name_(name)
 		, address_(address)
 	{}
+
+	bool PhoneEntry::is_match(const std::string& term) const
+	{
+		return name_.find(term) != std::string::npos 
+			|| phone_number_.is_match(term)
+			|| address_.is_match(term);
+	}
 }
