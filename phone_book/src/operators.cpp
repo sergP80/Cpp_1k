@@ -31,6 +31,25 @@ namespace phone_book
 
 		return os;
 	}
-	
 
+	bool operator==(const Address& lhs, const Address& rhs)
+	{
+		return lhs.country() == rhs.country()
+			&& lhs.city() == rhs.city()
+			&& lhs.street() == rhs.street()
+			&& lhs.building() == rhs.building()
+			&& lhs.zip() == rhs.zip();
+	}
+
+	bool operator==(const PhoneNumber& lhs, const PhoneNumber& rhs)
+	{
+		return lhs.value() == rhs.value();
+	}
+
+	bool operator==(const PhoneEntry& lhs, const PhoneEntry& rhs)
+	{
+		return lhs.name() == rhs.name()
+			&& lhs.address() == rhs.address()
+			&& lhs.phone_number() == rhs.phone_number();
+	}
 }

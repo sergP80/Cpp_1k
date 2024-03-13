@@ -20,6 +20,10 @@ int main()
 	std::string term;
 	
 	do {
+		
+		cout << "--------------------------------------" << endl;
+		cout << phone_book.entries() << endl;
+		cout << "--------------------------------------" << endl;
 		cout << "Enter search (Q to exit): ";
 
 		getline(cin, term, '\n');
@@ -33,7 +37,13 @@ int main()
 		{
 			auto result = phone_book.find_by(term);
 
-			cout << result << endl;
+			char operation;
+
+			cout << "Entry found. What woud you like to do?" << endl;
+
+			phone_book.show_operations(cout);
+
+			phone_book.select_operations(cin, cout, result);
 		}
 		catch (xPhoneEntryNotFound e)
 		{

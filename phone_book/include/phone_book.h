@@ -23,7 +23,7 @@ namespace phone_book
 
 		PhoneBook& add(const PhoneEntry& entry);
 		
-		void remove(const PhoneEntry& entry);
+		PhoneBook& remove(const PhoneEntry& entry);
 
 		PhoneEntry find_by(const std::string& term);
 
@@ -31,5 +31,9 @@ namespace phone_book
 		{
 			return entries_;
 		}
+
+		void show_operations(std::ostream& os) const;
+		
+		void select_operations(std::istream&, std::ostream&, const PhoneEntry&);
 	};
 }

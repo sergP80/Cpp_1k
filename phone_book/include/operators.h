@@ -24,10 +24,10 @@ namespace phone_book
 		return os;
 	}
 
-	//bool operator==(const Address&, const Address&);
+	bool operator==(const Address&, const Address&);
 
-	//bool operator==(const PhoneNumber&, const PhoneNumber&);
+	bool operator==(const PhoneNumber&, const PhoneNumber&);
 
-	//bool operator==(const PhoneNumber&, const PhoneNumber&);
+	bool operator==(const PhoneEntry&, const PhoneEntry&);
 
 }
