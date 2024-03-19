@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/cmake-build-debug/
+/.idea/.gitignore
+/.idea/Cpp_1k.iml
+/dist/lib/Linux/x86_64/libintegral.a
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
