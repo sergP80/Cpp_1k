@@ -34,6 +34,21 @@ int main()
 
         drawer.draw();
     }
+    
+    {
+        cout << "--- Rectangle Triangle ---" << endl;
+        RectangleTriangle r{200, 300, 7, 5};
+
+        Shape2D& s2 = r;
+
+        cout << s2.area() << endl;
+
+        cout << s2.perimeter()<< endl;
+
+        context::ShapeDrawer& drawer = context::RectangleTringleConsoleShapeDrawer(r, cout);
+
+        drawer.draw();
+    }
 
 
     return 0;

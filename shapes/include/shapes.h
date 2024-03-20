@@ -122,4 +122,43 @@ namespace shapes
             return 2 *(w + h);
         }
     };
+
+    class RectangleTriangle : public Shape2D
+    {
+    private:
+        int w;
+        int h;
+    public:
+        RectangleTriangle() {}
+
+        RectangleTriangle(int x, int y, int w, int h) : Shape2D(x, y), w(w), h(h) {}
+
+        int getW() const {
+            return w;
+        }
+
+        void setW(int w) {
+            this->w = w;
+        }
+
+        int getH() const {
+            return h;
+        }
+
+        void setH(int h) {
+            this->h = h;
+        }
+
+        int getC() const {
+            return std::sqrt(w*w + h*h);
+        }
+
+        double area() const override {
+            return 1.0*w * 1.0*h/2.0;
+        }
+
+        double perimeter() const override {
+            return 1.0 * w + 1.0 * h + getC();
+        }
+    };
 }

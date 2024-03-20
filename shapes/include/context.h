@@ -80,5 +80,41 @@ namespace shapes {
 				horizontal(r);
 			}
 		};
+
+		class RectangleTringleConsoleShapeDrawer : public ConsoleShapeDrawer
+		{
+		public:
+			RectangleTringleConsoleShapeDrawer(const RectangleTriangle& r, std::ostream& os_) : ConsoleShapeDrawer(r, os_)
+			{}
+
+			void draw() const override
+			{
+				auto& r = ((const RectangleTriangle&)shape);
+
+				for (int j = 0; j < r.getH(); ++j)
+				{
+					os << "*";
+					
+					for (int i = 0; i < j; ++i)
+					{
+						os << " ";
+					}
+
+					os << "*\n";
+				}
+
+				for (int i = 0; i < r.getW(); ++i)
+				{
+					os << "*";
+
+					if (i < r.getW() - 1)
+					{
+						os << " ";
+					}
+				}
+
+				os << "\n";
+			}
+		};
 	}
 }
