@@ -21,9 +21,12 @@ if(MSVC)
  add_compile_definitions(_USE_MATH_DEFINES)
 endif()
 
+include(FetchContent)
+
 # Include sub-projects.
 add_subdirectory ("libs")
 add_subdirectory ("integral_app")
 add_subdirectory ("phone_book")
 add_subdirectory ("decanat")
 add_subdirectory ("shapes")
+add_subdirectory ("gui")

@@ -30,7 +30,7 @@ int main()
 
         cout << s2.perimeter()<< endl;
 
-        context::ShapeDrawer& drawer = context::RectangleConsoleShapeDrawer(r, cout);
+        const context::ShapeDrawer& drawer = context::RectangleConsoleShapeDrawer(r, cout);
 
         drawer.draw();
     }
@@ -45,7 +45,7 @@ int main()
 
         cout << s2.perimeter()<< endl;
 
-        context::ShapeDrawer& drawer = context::RectangleTringleConsoleShapeDrawer(r, cout);
+        const context::ShapeDrawer& drawer = context::RectangleTringleConsoleShapeDrawer(r, cout);
 
         drawer.draw();
     }

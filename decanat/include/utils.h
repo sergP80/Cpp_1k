@@ -12,7 +12,7 @@ namespace decanat {
 		if (!source.empty())
 		{
 			os << "[";
-			for (auto i = 0; i < source.size(); ++i)
+			for (size_t i = 0; i < source.size(); ++i)
 			{
 				if (i > 0 && i < source.size() - 1)
 				{

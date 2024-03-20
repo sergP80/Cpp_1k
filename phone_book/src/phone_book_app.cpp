@@ -37,8 +37,6 @@ int main()
 		{
 			auto result = phone_book.find_by(term);
 
-			char operation;
-
 			cout << "Entry found. What woud you like to do?" << endl;
 
 			phone_book.show_operations(cout);
