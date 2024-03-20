@@ -17,8 +17,19 @@
 
 #endif // _WIN32
 
+//SOLID
+/*
+
+S - Single Responsibility
+O - Open-Closed
+L - Liskov Substituion
+I - Interface Segration
+D - Dependency Injection
+*/
+
 namespace shapes
 {
+
     class Shape2D {
     protected:
         int x;

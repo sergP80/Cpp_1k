@@ -10,11 +10,11 @@ namespace shapes {
 	
 		class ShapeDrawer {
 		protected:
-			const Shape2D* shape;
+			const Shape2D& shape;
 		public:
-			ShapeDrawer(const Shape2D* shape_): shape(shape_) {}
+			ShapeDrawer(const Shape2D& shape_): shape(shape_) {}
 
-			const Shape2D* get_shape() const
+			const Shape2D& get_shape() const
 			{
 				return shape;
 			}
@@ -28,47 +28,56 @@ namespace shapes {
 		protected:
 			std::ostream& os;
 		public:
-			ConsoleShapeDrawer(const Shape2D* shape_, std::ostream& os_): ShapeDrawer(shape_), os(os_)
+			ConsoleShapeDrawer(const Shape2D& shape_, std::ostream& os_): ShapeDrawer(shape_), os(os_)
 			{}
 		};
 
 		class RectangleConsoleShapeDrawer : public ConsoleShapeDrawer
 		{
-		public:
-			RectangleConsoleShapeDrawer(const Rectangle* r, std::ostream& os_): ConsoleShapeDrawer(r, os_)
-			{}
-
-			void draw() const override
+		private:
+			void horizontal(const Rectangle& r) const
 			{
-				auto r = (( Rectangle*)shape);
-
-				os << "AAAAAA: " << r->getW() << std::endl;
-
-				for (int i = 0; i < r->getW(); ++i)
+				for (int i = 0; i < r.getW(); ++i)
 				{
-					os << "-";
+					os << "*";
+
+					if (i < r.getW() - 1)
+					{
+						os << " ";
+					}
 				}
 
 				os << "\n";
+			}
 
-				for (int j = 0; j < r->getH(); ++j)
+			void vertical(const Rectangle& r) const
+			{
+				for (int j = 0; j < r.getH() - 2; ++j)
 				{
-					os << "|";
+					os << "*";
 
-					for (int k = 1; k < r->getW() - 1; ++k)
+					for (int k = 1; k < 2*(r.getW() - 1); ++k)
 					{
 						os << " ";
 					}
 
-					os << "|\n";
+					os << "*\n";
 				}
+			}
 
-				for (int i = 0; i < r->getW(); ++i)
-				{
-					os << "-";
-				}
+		public:
+			RectangleConsoleShapeDrawer(const Rectangle& r, std::ostream& os_): ConsoleShapeDrawer(r, os_)
+			{}
 
-				os << "\n";
+			void draw() const override
+			{
+				auto& r = (( const Rectangle&)shape);
+
+				horizontal(r);
+
+				vertical(r);
+
+				horizontal(r);
 			}
 		};
 	}

@@ -22,7 +22,7 @@ int main()
 
     {
         cout << "--- Rectangle ---" << endl;
-        Rectangle r{200, 300, 10, 5};
+        Rectangle r{200, 300, 15, 10};
 
         Shape2D& s2 = r;
 
@@ -30,7 +30,7 @@ int main()
 
         cout << s2.perimeter()<< endl;
 
-        context::ShapeDrawer& drawer = context::RectangleConsoleShapeDrawer(&r, cout);
+        context::ShapeDrawer& drawer = context::RectangleConsoleShapeDrawer(r, cout);
 
         drawer.draw();
     }
