@@ -4,9 +4,21 @@
 #include <cmath>
 #include <exception>
 
+#ifdef _WIN32
+
+#ifdef _MSC_VER
+
+#define PI M_PI
+#endif // _MSVC_VER
+
+#else
+
+#define PI M_1_PI
+
+#endif // _WIN32
+
 namespace shapes
 {
-
     class Shape2D {
     protected:
         int x;
@@ -56,11 +68,11 @@ namespace shapes
         }
 
         double area() const override {
-            return M_1_PI * radius * radius;
+            return PI * radius * radius;
         }
 
         double perimeter() const override {
-            return 2* M_1_PI * radius;
+            return 2* PI * radius;
         }
 
     };

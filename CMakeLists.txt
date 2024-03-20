@@ -18,6 +18,7 @@ endif()
 
 if(MSVC)
  add_definitions (/W4)
+ add_compile_definitions(_USE_MATH_DEFINES)
 endif()
 
 # Include sub-projects.
