@@ -71,8 +71,7 @@ namespace shapes {
 
 			void draw() const override
 			{
-				auto& r = (( const Rectangle&)shape);
-
+                const auto & r = dynamic_cast<const Rectangle&>(shape);
 				horizontal(r);
 
 				vertical(r);
