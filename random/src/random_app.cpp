@@ -9,7 +9,7 @@ int main()
 //    mt19937 mt32 {
 //        static_cast<mt19937::result_type>(chrono::steady_clock::now().time_since_epoch().count())
 //    };
-
+    
     random_device rnd {};
     mt19937 mt32 {rnd()};
 //    mt19937 mt32;
