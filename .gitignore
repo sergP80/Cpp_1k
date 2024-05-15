@@ -369,3 +369,4 @@ FodyWeavers.xsd
 /.idea/modules.xml
 /.idea/vcs.xml
 /dist/
+/.idea/editor.xml

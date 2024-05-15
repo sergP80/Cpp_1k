@@ -1,4 +1,4 @@
-﻿project("raw-pointers-demo")
+﻿project("smart-pointers-demo")
 
 file(GLOB SRC src/*.cpp src/*.cxx)
 
