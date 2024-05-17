@@ -1,10 +1,6 @@
 
 #pragma once
 
-#include <iostream>
-#include <functional>
-#include <memory>
-
 //RAII
 
 namespace smart_ptr
@@ -183,6 +179,18 @@ namespace smart_ptr
         const T& operator*() const
         {
             return resource_holder->get();
+        }
+
+        T* operator->()
+        {
+
+            return resource_holder->operator->();
+        }
+
+        const T* operator->() const
+        {
+
+            return resource_holder->operator->();
         }
 
         const T& get() const

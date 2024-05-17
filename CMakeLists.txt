@@ -21,6 +21,26 @@ if(MSVC)
  add_compile_definitions(_USE_MATH_DEFINES)
 endif()
 
+include(FetchContent)
+
+# Fetch GoogleTest
+FetchContent_Declare(
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG        v1.14.0
+)
+
+#set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+FetchContent_MakeAvailable(googletest)
+
+set(GTEST_INCLUDE_DIR ${googletest_SOURCE_DIR}/include)
+
+list(APPEND GTEST_COMMON_DEPS gtest gtest_main)
+
+# Enable testing
+enable_testing()
+
 # Include sub-projects.
 add_subdirectory ("libs")
 add_subdirectory ("integral_app")
