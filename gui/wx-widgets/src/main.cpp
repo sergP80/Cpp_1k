@@ -1,0 +1,1 @@
+﻿#include "wx-text-editor.h"

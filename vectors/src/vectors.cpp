@@ -2,6 +2,62 @@
 
 using namespace std;
 
+class BaseShip {
+public:
+    virtual ~BaseShip() = default;
+
+    void run()
+    {
+        cout << "Running BaseShip" << endl;
+    }
+};
+
+class BoatShip : public BaseShip {
+public:
+    void run()
+    {
+        BaseShip::run();
+        cout << "Running BoatShip" << endl;
+    }
+};
+
+class EngineShip : public BaseShip {
+public:
+    void run()
+    {
+        BaseShip::run();
+        cout << "Running EngineShip" << endl;
+    }
+};
+
+class RemoteControl {
+
+};
+
+class ToyShip : public BoatShip, public EngineShip, public RemoteControl {
+public:
+    void run()
+    {
+        EngineShip::run();
+    }
+};
+
+class Dad {};
+
+class Mome
+{
+
+};
+
+class Child: public Dad, public Mome
+{
+public:
+    Child()
+        : Dad()
+        , Mome()
+    {}
+};
+
 //bool(int)
 //function<bool(int)>
 bool is_even(int a)
